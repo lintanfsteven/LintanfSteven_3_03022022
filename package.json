@@ -1,0 +1,30 @@
+{
+  "name": "lintanfsteven_3_03022022",
+  "version": "1.0.0",
+  "description": "P3 OC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./sass/main.scss:.public/css/style.css",
+    "sass-compress": "sass --watch ./sass/main.scss:.public/css/style.css --style compressed",
+    "prefix": "postcss ./.public/css/style.css use=autoprefixer --map=false --output=./.public/css/prefixed/",
+    "watch": "chokidar ./sass/*.scss --command 'node-sass-chokidar ./sass/main.scss | postcss --use autoprefixer > ./.public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lintanfsteven/LintanfSteven_3_03022022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lintanfsteven/LintanfSteven_3_03022022/issues"
+  },
+  "homepage": "https://github.com/lintanfsteven/LintanfSteven_3_03022022#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.2",
+    "chokidar-cli": "^3.0.0",
+    "postcss": "^8.4.6",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.49.7"
+  }
+}
