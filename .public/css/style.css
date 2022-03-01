@@ -1,6 +1,15 @@
+/* Colors */
+/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap");
 * {
   box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  margin: auto;
+  max-width: 1400px;
 }
 
 * {
@@ -13,9 +22,42 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-header {
-  display: flex;
+h1 {
   text-align: center;
+  box-shadow: 0px 3px 0px #CECECE;
+  padding-top: 1rem;
+  position: relative;
+}
+
+.city {
+  display: flex;
+  background-color: #EAEAEA;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.explore {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+.explore__title {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.explore__titledescription {
+  font-size: 1.3rem;
+  font-weight: lighter;
+  margin-bottom: 2rem;
+}
+.explore__btn {
+  width: 220px;
 }
 
 /*# sourceMappingURL=style.css.map */
