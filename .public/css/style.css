@@ -33,7 +33,7 @@ h1, h3, h4, h5, h6 {
   color: white;
   font-size: 16px;
   transition: 150ms;
-  box-shadow: 0px 5px 5px 0px #C5C5C5;
+  box-shadow: 0 5px 0 0 #C5C5C5;
 }
 .gradient-btn:hover {
   filter: brightness(115%);
@@ -44,10 +44,11 @@ h1 {
   text-align: center;
   padding-top: 1rem;
   position: relative;
-  box-shadow: 0px 5px 5px 0px #CECECE;
+  box-shadow: 0 5px 0 0 #CECECE;
 }
 
 nav {
+  counter-reset: step;
   padding: 0 1rem;
 }
 nav h2 {
@@ -58,13 +59,40 @@ nav h2 {
 nav ol {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
 }
 nav li {
+  width: 90%;
   background-color: #F6F6F6;
   padding: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   border-radius: 1rem;
-  box-shadow: 0px 5px 5px 0px #ECECEC;
+  position: relative;
+  transition: 100ms;
+  box-shadow: 0 5px 0 0 #ECECEC;
+}
+nav li::before {
+  content: counter(step);
+  counter-increment: step;
+  color: white;
+  background-color: #9356DC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  position: absolute;
+  left: -0.8rem;
+  bottom: 1.3rem;
+}
+nav li:hover {
+  background-color: #f5edff;
+}
+nav i {
+  margin-right: 1rem;
 }
 
 .city {

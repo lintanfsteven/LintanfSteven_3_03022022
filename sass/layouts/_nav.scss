@@ -3,6 +3,7 @@
 
 
 nav {
+    counter-reset: step;
     padding: variables.$gutter;
     & h2 {
         margin-bottom: 1.5rem;
@@ -12,12 +13,39 @@ nav {
     & ol {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        list-style-type: none;
+        padding: 0;
     }
     & li {
+        width: 90%;
         background-color: variables.$light-background;
         padding: 1.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         border-radius: 1rem;
+        position: relative;
+        transition: 100ms;
         @include mixins.base-shadow (#ECECEC);
+        &::before {
+            content: counter(step);
+            counter-increment: step;
+            color: white;
+            background-color: variables.$primary;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            position: absolute;
+            left: -0.8rem;
+            bottom: 1.3rem;
+        }
+        &:hover {
+            background-color: #f5edff;
+        }
+    }
+    & i {
+        margin-right: 1rem;
     }
 }
