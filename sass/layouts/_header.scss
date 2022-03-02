@@ -1,6 +1,9 @@
+@use "../utils/mixins";
+
 h1 {
+    font-size: 2rem;
     text-align: center;
-    box-shadow: 0px 3px 0px #CECECE;
     padding-top: 1rem;
     position: relative;
+    @include mixins.base-shadow(#CECECE)
 }

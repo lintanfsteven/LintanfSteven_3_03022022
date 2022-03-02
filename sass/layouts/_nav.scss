@@ -1,0 +1,23 @@
+@use "../utils/variables";
+@use "../utils/mixins";
+
+
+nav {
+    padding: variables.$gutter;
+    & h2 {
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+    & ol {
+        display: flex;
+        flex-direction: column;
+    }
+    & li {
+        background-color: variables.$light-background;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+        @include mixins.base-shadow (#ECECEC);
+    }
+}

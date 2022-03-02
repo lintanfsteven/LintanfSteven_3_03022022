@@ -1,14 +1,14 @@
-@import "./utils/variables";
-@import "./utils/functions";
-@import "./utils/mixins";
-@import "./utils/placeholders";
+@use "./utils/variables";
+@use "./utils/functions";
+@use "./utils/mixins";
+@use "./utils/placeholders";
 
-@import "./base/base";
-@import "./base/typography";
+@use "./base/base";
+@use "./base/typography";
 
-@import "./components/buttons";
+@use "./components/buttons";
 
-@import "./layouts/header";
-@import "./layouts/nav";
-@import "./layouts/city";
-@import "./layouts/explore";
+@use "./layouts/header";
+@use "./layouts/nav";
+@use "./layouts/city";
+@use "./layouts/explore";
