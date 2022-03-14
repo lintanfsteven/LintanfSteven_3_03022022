@@ -2,7 +2,7 @@
 @use "../utils/mixins";
 
 
-nav {
+.tutorial {
     counter-reset: step;
     padding: variables.$gutter;
     & h2 {
@@ -43,6 +43,9 @@ nav {
         }
         &:hover {
             background-color: #f5edff;
+            i.fa-solid {
+                color: variables.$primary;
+            }
         }
     }
     & i {

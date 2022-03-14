@@ -47,23 +47,23 @@ h1 {
   box-shadow: 0 5px 0 0 #CECECE;
 }
 
-nav {
+.tutorial {
   counter-reset: step;
   padding: 0 1rem;
 }
-nav h2 {
+.tutorial h2 {
   margin-bottom: 1.5rem;
   font-size: 1.3rem;
   font-weight: bold;
 }
-nav ol {
+.tutorial ol {
   display: flex;
   flex-direction: column;
   align-items: center;
   list-style-type: none;
   padding: 0;
 }
-nav li {
+.tutorial li {
   width: 90%;
   background-color: #F6F6F6;
   padding: 1.5rem;
@@ -73,7 +73,7 @@ nav li {
   transition: 100ms;
   box-shadow: 0 5px 0 0 #ECECEC;
 }
-nav li::before {
+.tutorial li::before {
   content: counter(step);
   counter-increment: step;
   color: white;
@@ -88,10 +88,13 @@ nav li::before {
   left: -0.8rem;
   bottom: 1.3rem;
 }
-nav li:hover {
+.tutorial li:hover {
   background-color: #f5edff;
 }
-nav i {
+.tutorial li:hover i.fa-solid {
+  color: #9356DC;
+}
+.tutorial i {
   margin-right: 1rem;
 }
 
