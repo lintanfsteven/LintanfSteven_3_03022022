@@ -1,6 +1,8 @@
 @use "../utils/mixins";
+@use "../utils/variables";
 
-h1 {
+header p {
+    font-family: variables.$header-font;
     font-size: 2rem;
     text-align: center;
     padding-top: 1rem;

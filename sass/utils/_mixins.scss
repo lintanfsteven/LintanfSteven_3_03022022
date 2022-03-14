@@ -7,3 +7,8 @@
         flex-direction: row;
     }
 }
+
+@mixin container {
+    margin: auto;
+    max-width: 1400px;
+}

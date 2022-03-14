@@ -5,7 +5,9 @@
 .tutorial {
     counter-reset: step;
     padding: variables.$gutter;
-    & h2 {
+    @include mixins.container;
+    & h3 {
+        font-family: variables.$body-font;
         margin-bottom: 1.5rem;
         font-size: 1.3rem;
         font-weight: bold;
@@ -15,12 +17,16 @@
         flex-direction: column;
         align-items: center;
         list-style-type: none;
-        padding: 0;
+        @media screen and (min-width: 905px) {
+            flex-direction: row;
+            gap: 2rem;
+        }
     }
     & li {
         width: 90%;
         background-color: variables.$light-background;
         padding: 1.5rem;
+        gap: 0;
         margin-bottom: 1.5rem;
         border-radius: 1rem;
         position: relative;
