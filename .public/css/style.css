@@ -12,13 +12,18 @@ body {
   margin: auto;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 * {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-size: 16px;
 }
 
-h1, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Shrikhand", cursive;
   font-weight: normal;
 }
@@ -49,14 +54,14 @@ header p {
 
 .tutorial {
   counter-reset: step;
-  padding: 0 1rem;
   margin: auto;
   max-width: 1400px;
 }
 .tutorial h3 {
   font-family: "Roboto", sans-serif;
   margin-bottom: 1.5rem;
-  font-size: 1.3rem;
+  margin-left: 1rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 .tutorial ol {
@@ -64,11 +69,14 @@ header p {
   flex-direction: column;
   align-items: center;
   list-style-type: none;
+  padding: 0;
+  margin-left: 0.5rem;
 }
 @media screen and (min-width: 905px) {
   .tutorial ol {
     flex-direction: row;
     gap: 2rem;
+    padding: 0 1rem;
   }
 }
 .tutorial li {
@@ -133,12 +141,115 @@ header p {
   margin-bottom: 1rem;
 }
 .explore__titledescription {
+  font-family: "Roboto", sans-serif;
   font-size: 1.3rem;
   font-weight: lighter;
   margin-bottom: 2rem;
 }
 .explore__btn {
   padding: 1rem 1.5rem;
+}
+
+.restaurant {
+  padding-bottom: 2rem;
+  margin: auto;
+  max-width: 1400px;
+  background-color: #F6F6F6;
+}
+.restaurant__cards {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+@media screen and (min-width: 768px) {
+  .restaurant__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+.restaurant__cards .new {
+  position: relative;
+}
+.restaurant__cards .new::before {
+  content: "Nouveau";
+  position: absolute;
+  width: 5rem;
+  height: 2rem;
+  background-color: #99E2D0;
+  color: #31a488;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 1rem;
+  top: 1rem;
+}
+.restaurant__title {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 3rem 0 1.5rem 1rem;
+}
+.restaurant__name {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+.restaurant__card {
+  flex-basis: 48%;
+  background-color: white;
+  box-sizing: border-box;
+  flex-direction: column;
+  border-radius: 0 0 1rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 5px 0 0 #ECECEC;
+}
+.restaurant__card img {
+  width: 100%;
+  height: 11rem;
+  border-radius: 1rem 1rem 0 0;
+  object-fit: cover;
+  object-position: center;
+}
+.restaurant__description {
+  padding: 1rem;
+  position: relative;
+}
+.restaurant__description h4 {
+  margin-bottom: 0.3rem;
+}
+.restaurant__description i {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 30%;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  padding-bottom: 1.5rem;
+}
+footer__container {
+  max-width: 1400px;
+}
+footer h4 {
+  padding: 1.3rem 0 1rem 1.5rem;
+  font-size: 1.2rem;
+}
+footer p {
+  padding: 0.3rem 1.5rem;
+}
+footer .fa-utensils {
+  padding-right: 0.3rem;
+}
+footer .fa-handshake-angle {
+  font-size: 0.8rem;
+  padding-right: 0.15rem;
+}
+footer a {
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

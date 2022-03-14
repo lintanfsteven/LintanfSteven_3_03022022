@@ -1,0 +1,27 @@
+@use "../utils/mixins";
+
+footer {
+    background-color: #353535;
+    color: white;
+    padding-bottom: 1.5rem;
+    &__container {
+        max-width: 1400px;
+        }
+    & h4 {
+        padding: 1.3rem 0 1rem 1.5rem;
+        font-size: 1.2rem;
+    }
+    & p {
+        padding: 0.3rem 1.5rem ;
+    }
+    & .fa-utensils {
+        padding-right: 0.3rem;
+    }
+    & .fa-handshake-angle {
+        font-size: 0.8rem;
+        padding-right: 0.15rem;
+    }
+    & a {
+        color: white;
+    }
+}

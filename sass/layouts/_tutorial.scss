@@ -4,12 +4,12 @@
 
 .tutorial {
     counter-reset: step;
-    padding: variables.$gutter;
     @include mixins.container;
     & h3 {
         font-family: variables.$body-font;
         margin-bottom: 1.5rem;
-        font-size: 1.3rem;
+        margin-left: 1rem;
+        font-size: 1.4rem;
         font-weight: bold;
     }
     & ol {
@@ -17,9 +17,12 @@
         flex-direction: column;
         align-items: center;
         list-style-type: none;
+        padding: 0;
+        margin-left: 0.5rem;
         @media screen and (min-width: 905px) {
             flex-direction: row;
             gap: 2rem;
+            padding: 0 1rem;
         }
     }
     & li {

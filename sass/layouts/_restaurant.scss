@@ -1,0 +1,75 @@
+@use "../utils/variables";
+@use "../utils/mixins";
+
+.restaurant {
+    padding-bottom: 2rem;
+    @include mixins.container;
+    background-color: variables.$light-background;
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        padding: variables.$gutter;
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .new {
+            position: relative;
+            &::before {
+                content: "Nouveau";
+                position: absolute;
+                width: 5rem;
+                height: 2rem;
+                background-color: variables.$tertiary;
+                color: #31a488;
+                font-weight: 500;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                right: 1rem;
+                top: 1rem;
+            }
+        }
+    }
+    &__title {
+        font-family: variables.$body-font;
+        font-weight: bold;
+        font-size: 1.4rem;
+        padding: 3rem 0 1.5rem 1rem;
+    }
+    &__name {
+        font-family: variables.$body-font;
+        font-weight: bold;
+    }
+    &__card {
+        flex-basis: 48%;
+        background-color: white;
+        box-sizing: border-box;
+        flex-direction: column;
+        border-radius: 0 0 1rem 1rem;
+        margin-bottom: 1rem;
+        @include mixins.base-shadow (#ECECEC)
+    }
+    &__card img {
+        width: 100%;
+        height: 11rem;
+        border-radius: 1rem 1rem 0 0;
+        object-fit: cover;
+        object-position: center;
+    }
+    &__description {
+        padding: 1rem;
+        position: relative;
+        & h4 {
+            margin-bottom: 0.3rem;
+        }
+        & i {
+            font-size: 1.5rem;
+            position: absolute;
+            right: 1rem;
+            top: 30%;
+        }
+    }
+}
