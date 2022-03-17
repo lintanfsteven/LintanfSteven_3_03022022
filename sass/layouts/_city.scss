@@ -8,4 +8,24 @@
     text-align: center;
     gap: 1rem;
     padding: 1rem;
+    &__name {
+        background-color: inherit;
+        width: 7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: 500;
+        outline: none;
+        border: none;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    .fa-solid {
+        transition: all 200ms;
+        &:hover {
+            transform: scale(1.4);
+        }
+    }
 }

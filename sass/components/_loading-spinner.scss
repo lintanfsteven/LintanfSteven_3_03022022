@@ -1,0 +1,39 @@
+@use "../utils/variables";
+
+.loading-spinner {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background-color: #FFFFFF;
+    opacity: 0.8;
+    animation: loader 0.2s forwards 3s;
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .fa-solid {
+        color: transparent;
+        background-image: linear-gradient(to left, variables.$primary, variables.$secondary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: spinner 1s infinite linear;
+    }
+}
+
+@keyframes loader {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

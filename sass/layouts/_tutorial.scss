@@ -52,6 +52,7 @@
         }
         &:hover {
             background-color: #f5edff;
+            @include mixins.transition-shadow;
             i.fa-solid {
                 color: variables.$primary;
             }

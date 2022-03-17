@@ -2,9 +2,9 @@
 @use "../utils/variables";
 
 .gradient-btn {
-    background-image: linear-gradient(to bottom, #EC73DA, #9D5ADC);
     padding: 1rem;
     border-radius: 2rem;
+    background-image: linear-gradient(to bottom, #EC73DA, #9D5ADC);
     border: none;
     cursor: pointer;
     color: white;
@@ -13,5 +13,6 @@
     @include mixins.base-shadow (#C5C5C5);
     &:hover {
         filter: brightness(115%);
+        @include mixins.transition-shadow;
     }
 }

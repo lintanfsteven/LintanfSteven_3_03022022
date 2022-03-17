@@ -4,15 +4,19 @@ footer {
     background-color: #353535;
     color: white;
     padding-bottom: 1.5rem;
-    &__container {
-        max-width: 1400px;
+    & .footer__container {
+        display: flex;
+        flex-direction: column;
+        @media screen and (min-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
         }
-    & h4 {
-        padding: 1.3rem 0 1rem 1.5rem;
-        font-size: 1.2rem;
     }
-    & p {
-        padding: 0.3rem 1.5rem ;
+    & h4 {
+        padding: 1.3rem 1.5rem 1rem 1.5rem;
+        font-size: 1.2rem;
     }
     & .fa-utensils {
         padding-right: 0.3rem;
@@ -23,5 +27,6 @@ footer {
     }
     & a {
         color: white;
+        padding: 0.3rem 1.5rem ;
     }
 }
