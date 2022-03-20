@@ -93,6 +93,23 @@ header .backtrack-arrow {
   top: 1.7rem;
 }
 
+.menu__meal--check {
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 4rem;
+  margin-right: -3.5rem;
+  border-radius: 0 1rem 1rem 0;
+}
+.menu__meal--check .fa-check {
+  background-color: white;
+  border-radius: 50%;
+  color: #99E2D0;
+  padding: 0.1rem;
+}
+
 header p {
   font-family: "Shrikhand", cursive;
   font-size: 2rem;
@@ -295,13 +312,13 @@ header p {
 .restaurant__description h4 {
   margin-bottom: 0.3rem;
 }
-.restaurant__description .fa-regular, .restaurant__description .fa-solid {
+.restaurant__description .empty-heart, .restaurant__description .filled-heart {
   font-size: 1.5rem;
   position: absolute;
   right: 1rem;
   top: 30%;
 }
-.restaurant__description .fa-solid {
+.restaurant__description .filled-heart {
   color: transparent;
   background-image: linear-gradient(#ad5edb, #e678db);
   background-clip: text;
@@ -310,7 +327,7 @@ header p {
   transition: all 0.3s ease;
   transform: scaleX(0);
 }
-.restaurant__description:hover .fa-solid {
+.restaurant__description:hover .filled-heart {
   opacity: 1;
   transform-origin: 50% 50%;
   transform: scaleX(1) scale(1.06);
@@ -349,6 +366,55 @@ footer a {
   padding: 0.3rem 1.5rem;
 }
 
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+.menu__category {
+  margin-bottom: 2rem;
+}
+.menu__category--name {
+  margin-bottom: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+.menu__meal {
+  display: flex;
+  margin-bottom: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 5px 0 0 #ECECEC;
+  transition: box-shadow 0.3s ease, margin-right 1s;
+}
+.menu__meal:hover {
+  cursor: pointer;
+  box-shadow: 0 10px 10px 3px rgba(119, 119, 119, 0.2);
+}
+.menu__meal:hover .menu__meal--check {
+  margin-right: 0;
+}
+.menu__meal--description {
+  padding: 0.8rem 1rem 0 1rem;
+}
+.menu__meal--description h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+.menu__meal--description p {
+  font-size: 0.9rem;
+  font-weight: 100;
+}
+.menu__meal--price {
+  padding: 1rem 1rem 0.8rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-left: auto;
+  display: flex;
+  align-items: flex-end;
+}
+
 .wallpaper img {
   display: block;
   max-width: 100%;
@@ -357,29 +423,30 @@ footer a {
   object-position: 50% 65%;
 }
 
-main {
+.restaurant-menu {
   width: 100%;
   background-color: #F6F6F6;
   border-radius: 2rem 2rem 0 0;
   position: relative;
   margin-top: -2rem;
 }
-main .restaurant-menu {
+.restaurant-menu--container {
   padding: 1.5rem 1rem;
   position: relative;
   margin: auto;
   max-width: 1400px;
 }
-main .restaurant-menu h2 {
+.restaurant-menu--container h2 {
   font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
-main .restaurant-menu .fa-regular, main .restaurant-menu .fa-solid {
+.restaurant-menu--container .fa-heart {
   font-size: 1.7rem;
   position: absolute;
   right: 1rem;
   top: 1.5rem;
 }
-main .restaurant-menu .fa-solid {
+.restaurant-menu--container .filled-heart {
   color: transparent;
   background-image: linear-gradient(#ad5edb, #e678db);
   background-clip: text;
@@ -388,7 +455,7 @@ main .restaurant-menu .fa-solid {
   transition: all 0.3s ease;
   transform: scaleX(0);
 }
-main .restaurant-menu:hover .fa-solid {
+.restaurant-menu--container:hover .filled-heart {
   opacity: 1;
   transform-origin: 50% 50%;
   transform: scaleX(1) scale(1.06);

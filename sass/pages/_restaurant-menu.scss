@@ -10,26 +10,27 @@
 }
 
 
-main {
+.restaurant-menu {
     width: 100%;
     background-color: variables.$light-background;
     border-radius: 2rem 2rem 0 0;
     position: relative;
     margin-top: -2rem;
-    .restaurant-menu {
+    &--container {
         padding: 1.5rem 1rem;
         position: relative;
         @include mixins.container;
         h2 {
             font-size: 1.5rem;
+            margin-bottom: 2rem
         }
-        & .fa-regular, .fa-solid {
+        & .fa-heart {
             font-size: 1.7rem;
             position: absolute;
             right: 1rem;
             top: 1.5rem;
         }
-        & .fa-solid {
+        & .filled-heart {
             color: transparent;
             background-image: linear-gradient(#ad5edb, #e678db);
             background-clip: text;
@@ -38,7 +39,7 @@ main {
             transition: all 0.3s ease;
             transform: scaleX(0);
         }
-        &:hover .fa-solid {
+        &:hover .filled-heart {
             opacity: 1;
             transform-origin: 50% 50%;
             transform: scaleX(1) scale(1.06);
