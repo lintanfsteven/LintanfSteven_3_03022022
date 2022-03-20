@@ -2,42 +2,68 @@
 @use "../utils/mixins";
 
 .menu {
-
     display: flex;
     flex-direction: column;
+    @media screen and (min-width: 1100px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
     &__category {
         margin-bottom: 2rem;
         &--name {
+            font-weight: 300;
+            display: inline-block;
+            padding-bottom: 5px;
+            position: relative;
             margin-bottom: 1.5rem;
             font-family: variables.$body-font;
             text-transform: uppercase;
+            &::before {
+                content: "";
+                position: absolute;
+                width: 60%;
+                height: 1px;
+                bottom: 0;
+                left: 0;
+                border-bottom: 3px solid variables.$tertiary;
+            }
         }
     }
     &__meal {
         display: flex;
+        overflow: hidden;
         margin-bottom: 1rem;
         background-color: white;
         border-radius: 1rem;
-        overflow: hidden;
-        @include mixins.base-shadow(#ECECEC);
-        transition: box-shadow 0.3s ease, margin-right 1s;
+        @include mixins.box-shadow(#ECECEC);
+        transition: box-shadow 0.3s ease, margin-right 1s ease;
         &:hover {
             cursor: pointer;
-            @include mixins.transition-shadow
-        }
-        &:hover .menu__meal--check {
-            margin-right: 0;
+            @include mixins.transition-shadow;
+            & .menu__meal--check {
+                margin-right: 0;
+            }
         }
         &--description {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-overflow: "...";
             padding: 0.8rem 1rem 0 1rem;
             & h4 {
                 font-family: variables.$body-font;
                 font-weight: 500;
                 margin-bottom: 0.2rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             & p {
                 font-size: 0.9rem;
                 font-weight: 100;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
         &--price {

@@ -44,6 +44,15 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 10px 10px 3px rgba(119, 119, 119, 0.2);
 }
 
+.center-btn {
+  display: flex;
+  justify-content: center;
+}
+.center-btn .order-btn {
+  padding: 1rem 3rem;
+  margin-bottom: 2rem;
+}
+
 .loading-spinner {
   position: fixed;
   inset: 0;
@@ -98,6 +107,7 @@ header .backtrack-arrow {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   width: 3.5rem;
   height: 4rem;
   margin-right: -3.5rem;
@@ -108,8 +118,17 @@ header .backtrack-arrow {
   border-radius: 50%;
   color: #99E2D0;
   padding: 0.1rem;
+  animation: check-spin 500ms linear forwards;
 }
 
+@keyframes check-spin {
+  from {
+    transform: rotate(-300deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 header p {
   font-family: "Shrikhand", cursive;
   font-size: 2rem;
@@ -370,22 +389,41 @@ footer a {
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 1100px) {
+  .menu {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 .menu__category {
   margin-bottom: 2rem;
 }
 .menu__category--name {
+  font-weight: 300;
+  display: inline-block;
+  padding-bottom: 5px;
+  position: relative;
   margin-bottom: 1.5rem;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
 }
+.menu__category--name::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid #99E2D0;
+}
 .menu__meal {
   display: flex;
+  overflow: hidden;
   margin-bottom: 1rem;
   background-color: white;
   border-radius: 1rem;
-  overflow: hidden;
   box-shadow: 0 5px 0 0 #ECECEC;
-  transition: box-shadow 0.3s ease, margin-right 1s;
+  transition: box-shadow 0.3s ease, margin-right 1s ease;
 }
 .menu__meal:hover {
   cursor: pointer;
@@ -395,16 +433,26 @@ footer a {
   margin-right: 0;
 }
 .menu__meal--description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-overflow: "...";
   padding: 0.8rem 1rem 0 1rem;
 }
 .menu__meal--description h4 {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu__meal--description p {
   font-size: 0.9rem;
   font-weight: 100;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu__meal--price {
   padding: 1rem 1rem 0.8rem 1rem;
@@ -418,9 +466,14 @@ footer a {
 .wallpaper img {
   display: block;
   max-width: 100%;
-  height: 70vh;
+  height: 30vh;
   object-fit: cover;
   object-position: 50% 65%;
+}
+@media screen and (min-width: 1100px) {
+  .wallpaper img {
+    height: 70vh;
+  }
 }
 
 .restaurant-menu {

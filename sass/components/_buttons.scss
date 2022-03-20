@@ -10,9 +10,18 @@
     color: white;
     font-size: 16px;
     transition: 150ms;
-    @include mixins.base-shadow (#C5C5C5);
+    @include mixins.box-shadow (#C5C5C5);
     &:hover {
         filter: brightness(115%);
         @include mixins.transition-shadow;
+    }
+}
+
+.center-btn {
+    display: flex;
+    justify-content: center;
+    & .order-btn {
+        padding: 1rem 3rem;
+        margin-bottom: 2rem;
     }
 }

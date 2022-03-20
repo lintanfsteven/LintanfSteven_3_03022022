@@ -34,7 +34,7 @@
         border-radius: 1rem;
         position: relative;
         transition: 100ms;
-        @include mixins.base-shadow (#ECECEC);
+        @include mixins.box-shadow (#ECECEC);
         &::before {
             content: counter(step);
             counter-increment: step;
