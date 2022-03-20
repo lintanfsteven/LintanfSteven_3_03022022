@@ -5,7 +5,5 @@ header p {
     font-family: variables.$header-font;
     font-size: 2rem;
     text-align: center;
-    padding-top: 1rem;
-    position: relative;
-    @include mixins.base-shadow(#CECECE)
+    padding: 1rem 0 0.5rem 0;
 }

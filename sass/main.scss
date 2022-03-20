@@ -8,6 +8,7 @@
 
 @use "./components/buttons";
 @use "./components/loading-spinner";
+@use "./components/backtrack-arrow";
 
 @use "./layouts/header";
 @use "./layouts/tutorial";
@@ -15,3 +16,5 @@
 @use "./layouts/explore";
 @use "./layouts/restaurant";
 @use "./layouts/footer";
+
+@use "./pages/restaurant-menu";

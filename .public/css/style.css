@@ -80,13 +80,24 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotate(360deg);
   }
 }
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+header .backtrack-arrow {
+  font-size: 1.3rem;
+  position: absolute;
+  left: 1rem;
+  top: 1.7rem;
+}
+
 header p {
   font-family: "Shrikhand", cursive;
   font-size: 2rem;
   text-align: center;
-  padding-top: 1rem;
-  position: relative;
-  box-shadow: 0 5px 0 0 #CECECE;
+  padding: 1rem 0 0.5rem 0;
 }
 
 .tutorial {
@@ -336,6 +347,51 @@ footer .fa-handshake-angle {
 footer a {
   color: white;
   padding: 0.3rem 1.5rem;
+}
+
+.wallpaper img {
+  display: block;
+  max-width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  object-position: 50% 65%;
+}
+
+main {
+  width: 100%;
+  background-color: #F6F6F6;
+  border-radius: 2rem 2rem 0 0;
+  position: relative;
+  margin-top: -2rem;
+}
+main .restaurant-menu {
+  padding: 1.5rem 1rem;
+  position: relative;
+  margin: auto;
+  max-width: 1400px;
+}
+main .restaurant-menu h2 {
+  font-size: 1.5rem;
+}
+main .restaurant-menu .fa-regular, main .restaurant-menu .fa-solid {
+  font-size: 1.7rem;
+  position: absolute;
+  right: 1rem;
+  top: 1.5rem;
+}
+main .restaurant-menu .fa-solid {
+  color: transparent;
+  background-image: linear-gradient(#ad5edb, #e678db);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: scaleX(0);
+}
+main .restaurant-menu:hover .fa-solid {
+  opacity: 1;
+  transform-origin: 50% 50%;
+  transform: scaleX(1) scale(1.06);
 }
 
 /*# sourceMappingURL=style.css.map */
