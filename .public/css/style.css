@@ -463,7 +463,6 @@ footer a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-overflow: "...";
   padding: 0.8rem 1rem 0 1rem;
 }
 .menu__meal--description h4 {
