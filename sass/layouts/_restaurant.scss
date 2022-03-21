@@ -73,10 +73,10 @@
             margin-bottom: 0.3rem;
         }
         & .fa-heart {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             position: absolute;
-            right: 1rem;
-            top: 30%;
+            right: 2rem;
+            top: 1.5rem;
         }
         & .filled-heart {
             color: transparent;
@@ -84,13 +84,12 @@
             background-clip: text;
             -webkit-background-clip: text;
             opacity: 0;
-            transition: all 0.3s ease;
-            transform: scaleX(0);
-        }
-        &:hover .filled-heart {
-            opacity: 1;
-            transform-origin: 50% 50%;
-            transform: scaleX(1) scale(1.06);
+            transition: all 0.3s ease-out;
+            &:hover {
+                opacity: 1;
+                transform-origin: 50% 50%;
+                transform: scale(1.08);
+            }
         }
     }
 }
