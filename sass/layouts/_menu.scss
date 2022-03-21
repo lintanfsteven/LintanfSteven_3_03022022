@@ -1,6 +1,24 @@
 @use "../utils/variables";
 @use "../utils/mixins";
 
+@keyframes check-spin {
+    0% {
+        transform: rotate(-300deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes margin-right {
+    0% {
+        margin-right: -3.5rem;
+    }
+    100% {
+        margin-right: 0;
+    }
+}
+
 @keyframes appear {
     0% {
         transform: translateY(50%);
@@ -15,14 +33,15 @@
 .menu {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     @media screen and (min-width: 1100px) {
         flex-direction: row;
         justify-content: space-between;
     }
     &__category {
-        flex-basis: 30%;
-        margin-bottom: 2rem;
-        
+        flex-basis: 31%;
+        margin-bottom: 2rem;  
+        overflow: hidden; 
         &--name {
             font-weight: 300;
             display: inline-block;
@@ -48,19 +67,40 @@
                 animation-delay: 100ms * $i;
             }
         }
+        animation: appear 1s both;
         display: flex;
         overflow: hidden;
         margin-bottom: 1rem;
         background-color: white;
         border-radius: 1rem;
-        animation: appear 1s both;
         @include mixins.box-shadow(#ECECEC);
-        transition: box-shadow 0.3s ease, margin-right 1s ease;
+        transition: box-shadow 0.3s ease;
+        &--check {
+            background-color: variables.$tertiary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            width: 3.5rem;
+            height: 4rem;
+            margin-right: -3.5rem;
+            border-radius: 0 1rem 1rem 0;
+            transition: margin-right 0.5s;
+            & .fa-check {
+                background-color: white;
+                border-radius: 50%;
+                color: variables.$tertiary;
+                padding: 0.1rem;
+            }
+        }
         &:hover {
             cursor: pointer;
             @include mixins.transition-shadow;
             & .menu__meal--check {
                 margin-right: 0;
+            }
+            & .fa-check {
+                animation: check-spin 800ms;
             }
         }
         &--description {

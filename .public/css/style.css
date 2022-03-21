@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .gradient-btn:hover {
   filter: brightness(115%);
-  box-shadow: 0 10px 10px 3px rgba(119, 119, 119, 0.2);
+  box-shadow: 0 13px 13px 3px rgba(119, 119, 119, 0.2);
 }
 
 .center-btn {
@@ -102,33 +102,6 @@ header .backtrack-arrow {
   top: 1.7rem;
 }
 
-.menu__meal--check {
-  background-color: #99E2D0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  width: 3.5rem;
-  height: 4rem;
-  margin-right: -3.5rem;
-  border-radius: 0 1rem 1rem 0;
-}
-.menu__meal--check .fa-check {
-  background-color: white;
-  border-radius: 50%;
-  color: #99E2D0;
-  padding: 0.1rem;
-  animation: check-spin 500ms linear forwards;
-}
-
-@keyframes check-spin {
-  0% {
-    transform: rotate(-300deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
 header p {
   font-family: "Shrikhand", cursive;
   font-size: 2rem;
@@ -191,7 +164,7 @@ header p {
 }
 .tutorial li:hover {
   background-color: #f5edff;
-  box-shadow: 0 10px 10px 3px rgba(119, 119, 119, 0.2);
+  box-shadow: 0 13px 13px 3px rgba(119, 119, 119, 0.2);
   cursor: pointer;
 }
 .tutorial li:hover i.fa-solid {
@@ -318,7 +291,7 @@ header p {
   transition: box-shadow 0.3s ease;
 }
 .restaurant__card:hover {
-  box-shadow: 0 10px 10px 3px rgba(119, 119, 119, 0.2);
+  box-shadow: 0 13px 13px 3px rgba(119, 119, 119, 0.2);
 }
 .restaurant__card img {
   width: 100%;
@@ -388,6 +361,22 @@ footer a {
   padding: 0.3rem 1.5rem;
 }
 
+@keyframes check-spin {
+  0% {
+    transform: rotate(-300deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes margin-right {
+  0% {
+    margin-right: -3.5rem;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
 @keyframes appear {
   0% {
     transform: translateY(50%);
@@ -401,6 +390,7 @@ footer a {
 .menu {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 @media screen and (min-width: 1100px) {
   .menu {
@@ -409,8 +399,9 @@ footer a {
   }
 }
 .menu__category {
-  flex-basis: 30%;
+  flex-basis: 31%;
   margin-bottom: 2rem;
+  overflow: hidden;
 }
 .menu__category--name {
   font-weight: 300;
@@ -431,14 +422,14 @@ footer a {
   border-bottom: 3px solid #99E2D0;
 }
 .menu__meal {
+  animation: appear 1s both;
   display: flex;
   overflow: hidden;
   margin-bottom: 1rem;
   background-color: white;
   border-radius: 1rem;
-  animation: appear 1s both;
   box-shadow: 0 5px 0 0 #ECECEC;
-  transition: box-shadow 0.3s ease, margin-right 1s ease;
+  transition: box-shadow 0.3s ease;
 }
 .menu__meal:nth-child(2) {
   animation-delay: 200ms;
@@ -452,12 +443,33 @@ footer a {
 .menu__meal:nth-child(5) {
   animation-delay: 500ms;
 }
+.menu__meal--check {
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 4rem;
+  margin-right: -3.5rem;
+  border-radius: 0 1rem 1rem 0;
+  transition: margin-right 0.5s;
+}
+.menu__meal--check .fa-check {
+  background-color: white;
+  border-radius: 50%;
+  color: #99E2D0;
+  padding: 0.1rem;
+}
 .menu__meal:hover {
   cursor: pointer;
-  box-shadow: 0 10px 10px 3px rgba(119, 119, 119, 0.2);
+  box-shadow: 0 13px 13px 3px rgba(119, 119, 119, 0.2);
 }
 .menu__meal:hover .menu__meal--check {
   margin-right: 0;
+}
+.menu__meal:hover .fa-check {
+  animation: check-spin 800ms;
 }
 .menu__meal--description {
   white-space: nowrap;
