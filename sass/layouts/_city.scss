@@ -3,11 +3,13 @@
 .city {
     display: flex;
     background-color: variables.$dark-background;
+    position: relative;
     justify-content: center;
     align-items: center;
     text-align: center;
     gap: 1rem;
     padding: 1rem;
+    border-top: 3px solid darken($color: #eaeaea, $amount: 3%);
     &__name {
         background-color: inherit;
         width: 7rem;
