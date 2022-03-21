@@ -122,10 +122,10 @@ header .backtrack-arrow {
 }
 
 @keyframes check-spin {
-  from {
+  0% {
     transform: rotate(-300deg);
   }
-  to {
+  100% {
     transform: rotate(0deg);
   }
 }
@@ -192,6 +192,7 @@ header p {
 .tutorial li:hover {
   background-color: #f5edff;
   box-shadow: 0 10px 10px 3px rgba(119, 119, 119, 0.2);
+  cursor: pointer;
 }
 .tutorial li:hover i.fa-solid {
   color: #9356DC;
@@ -331,7 +332,7 @@ header p {
 .restaurant__description h4 {
   margin-bottom: 0.3rem;
 }
-.restaurant__description .empty-heart, .restaurant__description .filled-heart {
+.restaurant__description .fa-heart {
   font-size: 1.5rem;
   position: absolute;
   right: 1rem;
@@ -385,6 +386,16 @@ footer a {
   padding: 0.3rem 1.5rem;
 }
 
+@keyframes appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 .menu {
   display: flex;
   flex-direction: column;
@@ -396,6 +407,7 @@ footer a {
   }
 }
 .menu__category {
+  flex-basis: 30%;
   margin-bottom: 2rem;
 }
 .menu__category--name {
@@ -422,8 +434,18 @@ footer a {
   margin-bottom: 1rem;
   background-color: white;
   border-radius: 1rem;
+  animation: appear 1s both;
   box-shadow: 0 5px 0 0 #ECECEC;
   transition: box-shadow 0.3s ease, margin-right 1s ease;
+}
+.menu__meal:nth-child(2) {
+  animation-delay: 200ms;
+}
+.menu__meal:nth-child(3) {
+  animation-delay: 300ms;
+}
+.menu__meal:nth-child(4) {
+  animation-delay: 400ms;
 }
 .menu__meal:hover {
   cursor: pointer;
@@ -496,7 +518,7 @@ footer a {
 .restaurant-menu--container .fa-heart {
   font-size: 1.7rem;
   position: absolute;
-  right: 1rem;
+  right: 2rem;
   top: 1.5rem;
 }
 .restaurant-menu--container .filled-heart {

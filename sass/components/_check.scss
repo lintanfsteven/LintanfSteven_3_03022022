@@ -20,10 +20,10 @@
 }
 
 @keyframes check-spin {
-    from {
+    0% {
         transform: rotate(-300deg);
     }
-    to {
+    100% {
         transform: rotate(0deg);
     }
 }
